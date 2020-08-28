@@ -13,7 +13,6 @@ class ControllerExtensionPaymentGatewayservices extends Controller {
 			'private_key'      => $this->config->get('payment_gatewayservices_private_key'),
 			'api_password'     => $this->config->get('payment_gatewayservices_api_password'),
 			'transaction_type' => $this->config->get('payment_gatewayservices_transaction_type'),
-			//'notify_url'       => $this->url->link('extension/payment/gatewayservices/callback', 'gws_trans=12345', true),
 			'return_url'       => $this->url->link('checkout/success'),
 			'gateway_url'      => $this->config->get('payment_gatewayservices_test') == "sandbox" ? "https://test.gateway-services.com/acquiring.php" : "https://gateway-services.com/acquiring.php",
 		);
@@ -80,7 +79,7 @@ class ControllerExtensionPaymentGatewayservices extends Controller {
 		} else {
 			$error = (string)$result->Description . ' (' . (string)$result->Code . ')';
 			$this->log->write('Gatewayservices check failed: ' . $error);
-			//cheñk failed
+			//check failed
 			$this->response->redirect($this->url->link('checkout/failure', '', true));
 		}
 	}
