@@ -70,20 +70,18 @@ class ControllerExtensionPaymentGatewayservices extends Controller {
 		if($result) {//check successed
 			$this->log->write('Gatewayservices check successed');
 
-			//if ((string)$result->PaymentStatus == 'APPROVED' && isset($_GET['order_id'])) {
+			if ((string)$result->PaymentStatus == 'APPROVED' && isset($_GET['order_id'])) {
 				$this->load->model('checkout/order');
 				$order_id = $_GET['order_id'];
 				$this->model_checkout_order->addOrderHistory($order_id, $this->config->get('payment_gatewayservices_order_status_id'));
 				$this->response->redirect($this->url->link('checkout/success', '', true));
-			//}
+			}
 			$this->response->redirect($this->url->link('checkout/failure', '', true));
-			//echo "success";	//Do not modified or deleted
 		} else {
 			$error = (string)$result->Description . ' (' . (string)$result->Code . ')';
 			$this->log->write('Gatewayservices check failed: ' . $error);
-			//chedk failed
+			//cheñk failed
 			$this->response->redirect($this->url->link('checkout/failure', '', true));
-			//echo "fail";
 		}
 	}
 }
