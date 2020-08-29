@@ -56,7 +56,6 @@ class ControllerExtensionPaymentGatewayservices extends Controller {
 			'terminal_id'      => $this->config->get('payment_gatewayservices_terminal_id'),
 			'private_key'      => $this->config->get('payment_gatewayservices_private_key'),
 			'transaction_type' => $this->config->get('payment_gatewayservices_transaction_type'),
-			//'notify_url'       => ,
 			'return_url'       => $this->url->link('checkout/success'),
 			'gateway_url'      => $this->config->get('payment_gatewayservices_test') == "sandbox" ? "https://test.gateway-services.com/acquiring.php" : "https://gateway-services.com/acquiring.php",
 			'api_password' => $this->config->get('payment_gatewayservices_api_password'),
