@@ -26,7 +26,11 @@ $_['entry_sort_order']           = 'Sort Order';
 
 // Help
 $_['help_total']                 = 'The checkout total the order must reach before this payment method becomes active';
+<<<<<<< HEAD
 $_['help_gatewayservices_setup'] = '<a target="_blank" href="https://gateway-services.com/">Click here</a> to learn how to set up GatewayServices account.';
+=======
+$_['help_gatewayservices_setup'] = '<a target="_blank" href="http://www.opencart.cn/docs/gatewayservices">Click here</a> to learn how to set up GatewayServices account.';
+>>>>>>> 138dffedb11a2968177186a1afecb1a5f756fb05
 
 // Error
 $_['error_permission']           = 'Warning: You do not have permission to modify payment GatewayServices!';
