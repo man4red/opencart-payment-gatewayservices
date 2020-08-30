@@ -35,7 +35,6 @@ class ControllerExtensionPaymentGatewayservices extends Controller {
 		$transactionDetails['pmt_ipaddress'] = $this->request->server['REMOTE_ADDR'];
 		$transactionDetails['order_id'] = $out_trade_no;
 		
-
 		$this->load->model('extension/payment/gatewayservices');
 
 		$response = $this->model_extension_payment_gatewayservices->pagePay($transactionDetails, $config);
