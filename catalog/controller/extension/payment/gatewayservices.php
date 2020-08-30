@@ -18,7 +18,6 @@ class ControllerExtensionPaymentGatewayservices extends Controller {
 		);
 		$out_trade_no = trim($order_info['order_id']);
 		$subject = trim($this->config->get('config_name'));
-		$total_amount = trim($this->currency->format($order_info['total'], 'USD', '', false));
 		
 		$transactionDetails = array();
 		$transactionDetails['pmt_amt'] = $this->currency->format($order_info['total'], $order_info['currency_code'], $order_info['currency_value'], false);
